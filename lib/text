@@ -1,0 +1,34 @@
+  // static FutureOr<Map<String, dynamic>> onValue(Response<dynamic> response) {
+  //   var result;
+
+  //   final Map<String, dynamic> responseData = json.decode(response.data);
+
+  //   if (response.statusCode == 200) {
+  //     var userData = responseData['user'];
+
+  //     // now we will create a user model
+  //     UserModel authUser = UserModel.fromJson(responseData);
+
+  //     // now we will create shared preferences and save data
+  //     UserPreferences().saveUser(authUser);
+
+  //     result = {
+  //       'status': true,
+  //       'message': 'Successfully registered',
+  //       'data': authUser
+  //     };
+  //   } else {
+  //     result = {
+  //       'status': false,
+  //       'message': 'Failed to register',
+  //       'data': responseData
+  //     };
+  //   }
+
+  //   return result;
+  // }
+
+  static onError(error) {
+    print('The error is $error.message');
+    return {'status': false, 'message': 'Unsuccessful Request', 'data': error};
+  }
